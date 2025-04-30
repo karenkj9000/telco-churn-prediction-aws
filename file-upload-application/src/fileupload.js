@@ -1,11 +1,10 @@
-// fileupload.js
 import React from "react";
 import Dropzone from "react-dropzone-uploader";
 import "react-dropzone-uploader/dist/styles.css";
 import axios from "axios";
 
 function FileUpload() {
-  const API_ENDPOINT = "https://your-api-id.execute-api.region.amazonaws.com/dev/upload"; // Replace with your actual API endpoint
+  const API_ENDPOINT = "https://qayqhdo8t3.execute-api.eu-west-1.amazonaws.com/default/getSignedURLforFileUpload"; // Replace with your actual API endpoint
 
   const handleChangeStatus = ({ meta }, status) => {
     console.log(`File status changed: ${status}`, meta);
@@ -15,24 +14,26 @@ function FileUpload() {
     const fileWrapper = files[0];
     const file = fileWrapper.file;
 
-    try {
-      // Step 1: Get pre-signed URL
-      const response = await axios.post(API_ENDPOINT, {
-        filename: file.name,
-        contentType: file.type,
-      });
+    console.log("Selected file:", file.name, file.type, file.size);
 
-      // Step 2: Upload to S3 using the URL
-      const result = await fetch(response.data.uploadURL, {
+    try {
+      const presignedURL = `${API_ENDPOINT}?filename=${encodeURIComponent(file.name)}&contentType=${encodeURIComponent(file.type)}`;
+
+      const response = await axios.get(presignedURL);
+      console.log("Got signed URL:", response.data);
+
+      const { uploadURL, filename } = response.data;
+
+      const result = await fetch(uploadURL, {
         method: "PUT",
         headers: {
-          "Content-Type": file.type,
+          "Content-Type": file.type, // must match Lambda's ContentType
         },
         body: file,
       });
 
       if (result.ok) {
-        alert(`File "${file.name}" uploaded successfully!`);
+        alert(`File "${filename}" uploaded successfully!`);
       } else {
         alert("Upload failed.");
       }
