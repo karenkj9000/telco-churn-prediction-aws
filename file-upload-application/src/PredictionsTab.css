@@ -1,0 +1,66 @@
+/* Center the content */
+.centered {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* File selection container */
+  .file-select-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Style for the file select dropdown */
+  .file-select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 250px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  /* Style for the fetch predictions button */
+  .fetch-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 250px;
+    text-align: center;
+  }
+  
+  .fetch-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .fetch-btn:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  thead {
+    background-color: #f2f2f2;
+  }
