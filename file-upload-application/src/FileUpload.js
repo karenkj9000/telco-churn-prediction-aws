@@ -3,7 +3,7 @@ import Dropzone from "react-dropzone-uploader";
 import "react-dropzone-uploader/dist/styles.css";
 import axios from "axios";
 
-const API_ENDPOINT = `${process.env.BASE_URL}/getSignedURLforFileUpload`;
+const API_ENDPOINT = `${process.env.REACT_APP_BASE_URL}/getSignedURLforFileUpload`;
 
 function FileUpload() {
   const handleChangeStatus = ({ meta }, status) => {

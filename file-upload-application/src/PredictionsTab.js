@@ -3,8 +3,8 @@ import axios from "axios";
 import Papa from "papaparse";
 import "./PredictionsTab.css";
 
-const LIST_API = `${process.env.BASE_URL}/listPredictionFiles`;
-const SIGNED_URL_API = `${process.env.BASE_URL}/getSignedDownloadURLPredFile`;
+const LIST_API = `${process.env.REACT_APP_BASE_URL}/listPredictionFiles`;
+const SIGNED_URL_API = `${process.env.REACT_APP_BASE_URL}/getSignedDownloadURLPredFile`;
 
 function PredictionsTab() {
   const [files, setFiles] = useState([]);
