@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Papa from "papaparse";
-import "./PredictionsTab.css"; // Add custom CSS for styling
+import "./PredictionsTab.css";
 
-const LIST_API = "https://2alm1qoez0.execute-api.eu-west-1.amazonaws.com/list";
-const SIGNED_URL_API = "https://ijncxvbp2l.execute-api.eu-west-1.amazonaws.com/default/getSignedDownloadURLPredFile";
+const LIST_API = `${process.env.BASE_URL}/listPredictionFiles`;
+const SIGNED_URL_API = `${process.env.BASE_URL}/getSignedDownloadURLPredFile`;
 
 function PredictionsTab() {
   const [files, setFiles] = useState([]);
