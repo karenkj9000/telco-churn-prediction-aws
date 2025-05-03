@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/telco-churn-prediction-aws/static/css/main.b02e8054.css",
-    "main.js": "/telco-churn-prediction-aws/static/js/main.4e53937c.js",
+    "main.js": "/telco-churn-prediction-aws/static/js/main.2588f3c2.js",
     "index.html": "/telco-churn-prediction-aws/index.html",
     "main.b02e8054.css.map": "/telco-churn-prediction-aws/static/css/main.b02e8054.css.map",
-    "main.4e53937c.js.map": "/telco-churn-prediction-aws/static/js/main.4e53937c.js.map"
+    "main.2588f3c2.js.map": "/telco-churn-prediction-aws/static/js/main.2588f3c2.js.map"
   },
   "entrypoints": [
     "static/css/main.b02e8054.css",
-    "static/js/main.4e53937c.js"
+    "static/js/main.2588f3c2.js"
   ]
 }
